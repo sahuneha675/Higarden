@@ -8,3 +8,8 @@ class Person(models.Model):
     subject = models.CharField(max_length=200)
     msg = models.TextField()
     
+
+class Product(models.Model):
+    name = models.CharField(max_length=200)
+    img = models.ImageField(upload_to='product/')
+    description = models.TextField(max_length=200)

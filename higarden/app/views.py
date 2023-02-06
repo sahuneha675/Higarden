@@ -3,7 +3,8 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    return render(request,'home.html')
+    product = Product.objects.all()
+    return render(request,'home.html', {"product":product})
 
 def about(request):
     return render(request,'about.html')
@@ -21,4 +22,4 @@ def contact_us_data(request):
         Person.objects.create(name=name,email=email,subject=subject,msg=msg)
         return redirect('/contact_us/')
 
-        
+
